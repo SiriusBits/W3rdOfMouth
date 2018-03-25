@@ -1,13 +1,13 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
 
+const HeaderWrapper = styled.div`
+  background: rebeccapurple;
+  margin-bottom: 1.45rem;
+`
 const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
+  <HeaderWrapper>
     <div
       style={{
         margin: '0 auto',
@@ -37,7 +37,7 @@ const Header = () => (
         </li>
       </ul>
     </nav>
-  </div>
+  </HeaderWrapper>
 )
 
 export default Header

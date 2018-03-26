@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class About extends Component {
   render() {
@@ -13,8 +13,8 @@ class About extends Component {
           PBR ugh irony Etsy iPhone chambray Odd Future slow-carb gastropub kitsch kogi letterpress.
         </p>
       </div>
-    )
+    );
   }
 }
 
-export default About
+export default About;

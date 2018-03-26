@@ -1,20 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
-import Header from '../components/Header'
-import './index.css'
+import Header from '../components/Header';
+import './index.css';
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, data }) => (
   <div>
     <Helmet
       title="Gatsby Default Starter"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
+      meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
     />
-    <Header />
+    <Header data={data} />
     <div
       style={{
         margin: '0 auto',
@@ -26,10 +23,26 @@ const TemplateWrapper = ({ children }) => (
       {children()}
     </div>
   </div>
-)
+);
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
-}
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
+
+export const query = graphql`
+  query LayoutQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+    background: imageSharp(id: { regex: "/bg.jpeg/" }) {
+      sizes(maxWidth: 1240, grayscale: true) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`;

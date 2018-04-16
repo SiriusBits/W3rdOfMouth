@@ -48,23 +48,29 @@ const MainNav = styled.nav`
 `;
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { viewH: this.props.location.pathname === '/' ? '40vh' : '20vh' };
+  }
   componentDidUpdate = (prevProps, prevState) => {
     const { location } = this.props;
     if (location.pathname !== prevProps.location.pathname) {
       if (this.props.location.pathname === '/') {
-        this.wrapper.animate([{ height: '20vh' }, { height: '40vh' }], {
+        this.wrapper.animate([{ height: prevState.viewH }, { height: '40vh' }], {
           duration: 300,
           fill: 'forwards',
           easing: 'cubic-bezier(0.86, 0, 0.7, 1)',
           iterations: 1,
         });
-      } else {
-        this.wrapper.animate([{ height: '40vh' }, { height: '20vh' }], {
+        this.setState({ viewH: '40vh' });
+      } else if (prevProps.location.pathname === '/' && this.props.location.pathname !== '/') {
+        this.wrapper.animate([{ height: prevState.viewH }, { height: '20vh' }], {
           duration: 300,
           fill: 'forwards',
           easing: 'cubic-bezier(0.86, 0, 0.7, 1)',
           iterations: 1,
         });
+        this.setState({ viewH: '20vh' });
       }
     }
   };
@@ -92,6 +98,9 @@ export default class Header extends Component {
               </li>
               <li>
                 <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/about">Cur </Link>
               </li>
             </ul>
           </MainNav>

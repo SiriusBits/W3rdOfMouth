@@ -35,6 +35,7 @@
     "gatsby-plugin-sharp": "^1.6.41",
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-transformer-sharp": "^1.6.22",
+    "gh-pages": "^1.1.0",
     "prettier": "^1.11.1"
   }
 }

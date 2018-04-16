@@ -4,9 +4,7 @@ import PostListing from '../components/Posts/PostListing';
 
 const IndexPage = ({ data }) => (
   <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <h2>Hi people</h2>
     {data.allMarkdownRemark.edges.map(({ node }) => <PostListing key={node.id} post={node} />)}
   </div>
 );
@@ -21,7 +19,7 @@ export const query = graphql`
         description
       }
     }
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id

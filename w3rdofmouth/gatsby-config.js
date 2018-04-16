@@ -3,7 +3,6 @@ module.exports = {
     title: 'W3rd of Mouth',
     description: 'A blog that speaks to you',
   },
-  pathPrefix: '/w3rdofmouth',
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',

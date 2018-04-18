@@ -3,6 +3,7 @@ backend:
   repo: siriusbits/w3rdofmouth
 
 media_folder: static/assets
+public_folder: /assets
 
 collections:
   - name: post

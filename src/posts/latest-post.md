@@ -1,6 +1,7 @@
 ---
 title: "Wha wha WHAAT!"
 date: "2018-02-22"
+image: /assets/vh-funny-iphone-5-stormtrooper.jpg
 ---
 
 #Hi Person!

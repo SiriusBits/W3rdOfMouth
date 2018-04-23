@@ -4,6 +4,13 @@ module.exports = {
     description: 'A blog that speaks to you',
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: 'tmtpslkqg6rx',
+        accessToken: '3698800a3fad03becb5380fc7d636fe2c0d3b00ebd1d526130cf30bc6469179c'
+      }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
@@ -27,14 +34,8 @@ module.exports = {
         path: `${__dirname}/static/assets`,
       },
     },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        excerpt_separator: `<!-- end -->`,
-      },
-    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-netlify-cms'
+    'gatsby-transformer-remark',
   ],
 };
